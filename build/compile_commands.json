@@ -1,0 +1,56 @@
+[
+{
+  "directory": "/home/chris/dev/atom/build",
+  "command": "/usr/bin/g++  -I/home/chris/dev/atom/include -g -std=gnu++17 -o CMakeFiles/atom.dir/src/Application.cpp.o -c /home/chris/dev/atom/src/Application.cpp",
+  "file": "/home/chris/dev/atom/src/Application.cpp",
+  "output": "CMakeFiles/atom.dir/src/Application.cpp.o"
+},
+{
+  "directory": "/home/chris/dev/atom/build",
+  "command": "/usr/bin/g++  -I/home/chris/dev/atom/include -g -std=gnu++17 -o CMakeFiles/atom.dir/src/Entity.cpp.o -c /home/chris/dev/atom/src/Entity.cpp",
+  "file": "/home/chris/dev/atom/src/Entity.cpp",
+  "output": "CMakeFiles/atom.dir/src/Entity.cpp.o"
+},
+{
+  "directory": "/home/chris/dev/atom/build",
+  "command": "/usr/bin/g++  -I/home/chris/dev/atom/include -g -std=gnu++17 -o CMakeFiles/atom.dir/src/MeshEntity.cpp.o -c /home/chris/dev/atom/src/MeshEntity.cpp",
+  "file": "/home/chris/dev/atom/src/MeshEntity.cpp",
+  "output": "CMakeFiles/atom.dir/src/MeshEntity.cpp.o"
+},
+{
+  "directory": "/home/chris/dev/atom/build",
+  "command": "/usr/bin/g++  -I/home/chris/dev/atom/include -g -std=gnu++17 -o CMakeFiles/atom.dir/src/camera/Camera.cpp.o -c /home/chris/dev/atom/src/camera/Camera.cpp",
+  "file": "/home/chris/dev/atom/src/camera/Camera.cpp",
+  "output": "CMakeFiles/atom.dir/src/camera/Camera.cpp.o"
+},
+{
+  "directory": "/home/chris/dev/atom/build",
+  "command": "/usr/bin/g++  -I/home/chris/dev/atom/include -g -std=gnu++17 -o CMakeFiles/atom.dir/src/main.cpp.o -c /home/chris/dev/atom/src/main.cpp",
+  "file": "/home/chris/dev/atom/src/main.cpp",
+  "output": "CMakeFiles/atom.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/chris/dev/atom/build",
+  "command": "/usr/bin/g++  -I/home/chris/dev/atom/include -g -std=gnu++17 -o CMakeFiles/atom.dir/src/shapes/Cube.cpp.o -c /home/chris/dev/atom/src/shapes/Cube.cpp",
+  "file": "/home/chris/dev/atom/src/shapes/Cube.cpp",
+  "output": "CMakeFiles/atom.dir/src/shapes/Cube.cpp.o"
+},
+{
+  "directory": "/home/chris/dev/atom/build",
+  "command": "/usr/bin/g++  -I/home/chris/dev/atom/include -g -std=gnu++17 -o CMakeFiles/atom.dir/src/shapes/Plane.cpp.o -c /home/chris/dev/atom/src/shapes/Plane.cpp",
+  "file": "/home/chris/dev/atom/src/shapes/Plane.cpp",
+  "output": "CMakeFiles/atom.dir/src/shapes/Plane.cpp.o"
+},
+{
+  "directory": "/home/chris/dev/atom/build",
+  "command": "/usr/bin/g++  -I/home/chris/dev/atom/include -g -std=gnu++17 -o CMakeFiles/atom.dir/src/shapes/Sphere.cpp.o -c /home/chris/dev/atom/src/shapes/Sphere.cpp",
+  "file": "/home/chris/dev/atom/src/shapes/Sphere.cpp",
+  "output": "CMakeFiles/atom.dir/src/shapes/Sphere.cpp.o"
+},
+{
+  "directory": "/home/chris/dev/atom/build",
+  "command": "/usr/bin/gcc  -I/home/chris/dev/atom/include -g -o CMakeFiles/atom.dir/src/glad.c.o -c /home/chris/dev/atom/src/glad.c",
+  "file": "/home/chris/dev/atom/src/glad.c",
+  "output": "CMakeFiles/atom.dir/src/glad.c.o"
+}
+]

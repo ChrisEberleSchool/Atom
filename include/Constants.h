@@ -1,0 +1,4 @@
+#include <glm/glm.hpp>
+
+const glm::float32 GRAVITY = 9.81f;
+const glm::float32 G = 6.67430e-11f;
