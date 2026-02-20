@@ -1,35 +1,41 @@
 #pragma once
-#include "Entity.h"
-#include "MeshEntity.h"
-#include "camera/Camera.h"
-#include <GLFW/glfw3.h>
-#include <vector>
 #include <memory>
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+#include "engine/components/CameraComponent.h"
+#include "engine/scene/Scene.h"
 
-class Application {
- public:
+class Application
+{
+public:
   Application();
   ~Application();
 
   void Run();
+  void SetActiveScene(std::unique_ptr<Scene> scene);
 
- private:
-  GLFWwindow* window;
-  Camera camera;
-  float lastFrame;
-  float deltaTime;
+private:
+  std::unique_ptr<Scene> activeScene;
+
+  GLFWwindow *window;
+  float lastFrame = 0.0f;
+  float deltaTime = 0.0f;
 
   unsigned int shaderProgram;
-  std::vector<std::unique_ptr<MeshEntity>> entities;
 
   void Init();
-  void Update();
-  void Render();
   void Shutdown();
 
-  static void MouseCallback(GLFWwindow* window, double xpos, double ypos);
+  void ProcessInput();
+  void Update();
+  void FixedUpdate();
+  void LateUpdate();
+  void Render();
 
-  float fpsTimer = 0.0f;
-  int fpsFrames = 0;
-  float currentFPS = 0.0f;
+  static void MouseCallback(GLFWwindow *window, double xpos, double ypos);
+
+  // For FPS mouse look
+  static bool firstMouse;
+  static float lastX;
+  static float lastY;
 };

@@ -8,15 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/chris/dev/atom/src/glad.c" "CMakeFiles/atom.dir/src/glad.c.o" "gcc" "CMakeFiles/atom.dir/src/glad.c.o.d"
-  "/home/chris/dev/atom/src/Application.cpp" "CMakeFiles/atom.dir/src/Application.cpp.o" "gcc" "CMakeFiles/atom.dir/src/Application.cpp.o.d"
-  "/home/chris/dev/atom/src/Entity.cpp" "CMakeFiles/atom.dir/src/Entity.cpp.o" "gcc" "CMakeFiles/atom.dir/src/Entity.cpp.o.d"
-  "/home/chris/dev/atom/src/MeshEntity.cpp" "CMakeFiles/atom.dir/src/MeshEntity.cpp.o" "gcc" "CMakeFiles/atom.dir/src/MeshEntity.cpp.o.d"
-  "/home/chris/dev/atom/src/camera/Camera.cpp" "CMakeFiles/atom.dir/src/camera/Camera.cpp.o" "gcc" "CMakeFiles/atom.dir/src/camera/Camera.cpp.o.d"
-  "/home/chris/dev/atom/src/main.cpp" "CMakeFiles/atom.dir/src/main.cpp.o" "gcc" "CMakeFiles/atom.dir/src/main.cpp.o.d"
-  "/home/chris/dev/atom/src/shapes/Cube.cpp" "CMakeFiles/atom.dir/src/shapes/Cube.cpp.o" "gcc" "CMakeFiles/atom.dir/src/shapes/Cube.cpp.o.d"
-  "/home/chris/dev/atom/src/shapes/Plane.cpp" "CMakeFiles/atom.dir/src/shapes/Plane.cpp.o" "gcc" "CMakeFiles/atom.dir/src/shapes/Plane.cpp.o.d"
-  "/home/chris/dev/atom/src/shapes/Sphere.cpp" "CMakeFiles/atom.dir/src/shapes/Sphere.cpp.o" "gcc" "CMakeFiles/atom.dir/src/shapes/Sphere.cpp.o.d"
+  "/Users/chriseberle/dev/github/Atom/src/glad.c" "CMakeFiles/atom.dir/src/glad.c.o" "gcc" "CMakeFiles/atom.dir/src/glad.c.o.d"
+  "/Users/chriseberle/dev/github/Atom/src/Application.cpp" "CMakeFiles/atom.dir/src/Application.cpp.o" "gcc" "CMakeFiles/atom.dir/src/Application.cpp.o.d"
+  "/Users/chriseberle/dev/github/Atom/src/engine/components/CameraComponent.cpp" "CMakeFiles/atom.dir/src/engine/components/CameraComponent.cpp.o" "gcc" "CMakeFiles/atom.dir/src/engine/components/CameraComponent.cpp.o.d"
+  "/Users/chriseberle/dev/github/Atom/src/engine/components/MeshComponent.cpp" "CMakeFiles/atom.dir/src/engine/components/MeshComponent.cpp.o" "gcc" "CMakeFiles/atom.dir/src/engine/components/MeshComponent.cpp.o.d"
+  "/Users/chriseberle/dev/github/Atom/src/engine/components/ParticleComponent.cpp" "CMakeFiles/atom.dir/src/engine/components/ParticleComponent.cpp.o" "gcc" "CMakeFiles/atom.dir/src/engine/components/ParticleComponent.cpp.o.d"
+  "/Users/chriseberle/dev/github/Atom/src/engine/scene/SceneManager.cpp" "CMakeFiles/atom.dir/src/engine/scene/SceneManager.cpp.o" "gcc" "CMakeFiles/atom.dir/src/engine/scene/SceneManager.cpp.o.d"
+  "/Users/chriseberle/dev/github/Atom/src/main.cpp" "CMakeFiles/atom.dir/src/main.cpp.o" "gcc" "CMakeFiles/atom.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
