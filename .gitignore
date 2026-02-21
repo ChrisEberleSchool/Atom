@@ -1,0 +1,7 @@
+# Ignore build output folders
+build/
+Build/
+*/build/
+
+# macOS system file
+.DS_Store
