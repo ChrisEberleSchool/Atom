@@ -4,18 +4,38 @@ project(atom)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-include_directories(${CMAKE_SOURCE_DIR}/include)
+# ---- Include paths ----
+# Project root so includes like "engine/..." work
+include_directories(${CMAKE_SOURCE_DIR})
 
-file(GLOB_RECURSE CPP_SOURCES src/*.cpp)
-set(GLAD_SRC ${CMAKE_SOURCE_DIR}/src/glad.c)
+# External libraries
+include_directories(${CMAKE_SOURCE_DIR}/external/glad/include)
 
-add_executable(atom ${CPP_SOURCES} ${GLAD_SRC})
+# ---- Collect source files ----
+file(GLOB_RECURSE ENGINE_SOURCES
+    engine/*.cpp
+)
 
+file(GLOB_RECURSE PROJECT_SOURCES
+    assets/*.cpp
+)
+
+set(MAIN_SOURCE main.cpp)
+set(GLAD_SRC external/glad/src/glad.c)
+
+# ---- Create executable ----
+add_executable(atom
+    ${MAIN_SOURCE}
+    ${ENGINE_SOURCES}
+    ${PROJECT_SOURCES}
+    ${GLAD_SRC}
+)
+
+# ---- GLFW ----
 find_package(glfw3 3.3 REQUIRED)
-
 target_link_libraries(atom glfw)
 
-# Platform-specific linking
+# ---- OpenGL platform linking ----
 if(APPLE)
     target_link_libraries(atom
         "-framework OpenGL"
@@ -23,8 +43,14 @@ if(APPLE)
         "-framework IOKit"
         "-framework CoreVideo"
     )
-elseif(UNIX)
+elseif(UNIX AND NOT APPLE)
+    find_package(OpenGL REQUIRED)
     target_link_libraries(atom
-        GL dl pthread X11 Xrandr Xi
+        OpenGL::GL
+        dl
+        pthread
+        X11
+        Xrandr
+        Xi
     )
 endif()
