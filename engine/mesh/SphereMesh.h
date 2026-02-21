@@ -1,21 +1,25 @@
 #pragma once
 #include "Mesh.h"
-#include <glad.h>
+#include <glad/glad.h>
 #include <vector>
 #include <glm/glm.hpp>
 #include <cmath>
 
-class SphereMesh : public Mesh {
- public:
+class SphereMesh : public Mesh
+{
+public:
   SphereMesh(unsigned int XSegments = 32, unsigned int YSegments = 32)
       : xSeg(XSegments), ySeg(YSegments) {}
 
-  void Setup() override {
+  void Setup() override
+  {
     std::vector<float> vertices;
     std::vector<unsigned int> indices;
 
-    for (unsigned int y = 0; y <= ySeg; ++y) {
-      for (unsigned int x = 0; x <= xSeg; ++x) {
+    for (unsigned int y = 0; y <= ySeg; ++y)
+    {
+      for (unsigned int x = 0; x <= xSeg; ++x)
+      {
         float xSegment = (float)x / xSeg;
         float ySegment = (float)y / ySeg;
 
@@ -34,8 +38,10 @@ class SphereMesh : public Mesh {
       }
     }
 
-    for (unsigned int y = 0; y < ySeg; ++y) {
-      for (unsigned int x = 0; x < xSeg; ++x) {
+    for (unsigned int y = 0; y < ySeg; ++y)
+    {
+      for (unsigned int x = 0; x < xSeg; ++x)
+      {
         unsigned int i0 = y * (xSeg + 1) + x;
         unsigned int i1 = i0 + 1;
         unsigned int i2 = i0 + (xSeg + 1);
@@ -68,29 +74,34 @@ class SphereMesh : public Mesh {
 
     // Position
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float),
-                          (void*)0);
+                          (void *)0);
     glEnableVertexAttribArray(0);
     // Normal
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float),
-                          (void*)(3 * sizeof(float)));
+                          (void *)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
 
     glBindVertexArray(0);
   }
 
-  void Draw() override {
+  void Draw() override
+  {
     glBindVertexArray(VAO);
     glDrawElements(GL_TRIANGLES, indexCount, GL_UNSIGNED_INT, 0);
     glBindVertexArray(0);
   }
 
-  void Cleanup() override {
-    if (VAO) glDeleteVertexArrays(1, &VAO);
-    if (VBO) glDeleteBuffers(1, &VBO);
-    if (EBO) glDeleteBuffers(1, &EBO);
+  void Cleanup() override
+  {
+    if (VAO)
+      glDeleteVertexArrays(1, &VAO);
+    if (VBO)
+      glDeleteBuffers(1, &VBO);
+    if (EBO)
+      glDeleteBuffers(1, &EBO);
   }
 
- private:
+private:
   unsigned int VAO = 0, VBO = 0, EBO = 0;
   unsigned int indexCount = 0;
   unsigned int xSeg, ySeg;

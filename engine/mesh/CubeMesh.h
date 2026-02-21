@@ -1,13 +1,15 @@
 #pragma once
 #include "Mesh.h"
-#include <glad.h>
+#include <glad/glad.h>
 #include <vector>
 
-class CubeMesh : public Mesh {
- public:
+class CubeMesh : public Mesh
+{
+public:
   CubeMesh(float size = 1.0f) : halfSize(size / 2.0f) {}
 
-  void Setup() override {
+  void Setup() override
+  {
     float s = halfSize;
 
     // Vertex format: position(x,y,z) + normal(x,y,z)
@@ -32,7 +34,8 @@ class CubeMesh : public Mesh {
         0, -1, 0, s, -s, -s, 0, -1, 0, -s, -s, -s, 0, -1, 0};
 
     unsigned int indices[36];
-    for (unsigned int i = 0; i < 36; i++) indices[i] = i;
+    for (unsigned int i = 0; i < 36; i++)
+      indices[i] = i;
 
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
@@ -49,12 +52,12 @@ class CubeMesh : public Mesh {
 
     // Position attribute
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float),
-                          (void*)0);
+                          (void *)0);
     glEnableVertexAttribArray(0);
 
     // Normal attribute
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float),
-                          (void*)(3 * sizeof(float)));
+                          (void *)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
 
     glBindVertexArray(0);
@@ -62,19 +65,24 @@ class CubeMesh : public Mesh {
     indexCount = 36;
   }
 
-  void Draw() override {
+  void Draw() override
+  {
     glBindVertexArray(VAO);
     glDrawElements(GL_TRIANGLES, indexCount, GL_UNSIGNED_INT, 0);
     glBindVertexArray(0);
   }
 
-  void Cleanup() override {
-    if (VAO) glDeleteVertexArrays(1, &VAO);
-    if (VBO) glDeleteBuffers(1, &VBO);
-    if (EBO) glDeleteBuffers(1, &EBO);
+  void Cleanup() override
+  {
+    if (VAO)
+      glDeleteVertexArrays(1, &VAO);
+    if (VBO)
+      glDeleteBuffers(1, &VBO);
+    if (EBO)
+      glDeleteBuffers(1, &EBO);
   }
 
- private:
+private:
   float halfSize;
   unsigned int VAO = 0, VBO = 0, EBO = 0;
   unsigned int indexCount = 0;
